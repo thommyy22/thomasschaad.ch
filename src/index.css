@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 144 43% 47%;
+    --card: 0 0% 100%;
+    --card-foreground: 144 43% 47%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 144 43% 47%;
+    --primary: 144 43% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 144 43% 47%;
+    --muted: 0 0% 100%;
+    --muted-foreground: 144 43% 47%;
+    --accent: 144 43% 47%;
+    --accent-foreground: 0 0% 100%;
+    --accent-tint: 144 40% 95%;
+    --section: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 144 43% 47%;
+    --input: 144 43% 47%;
+    --ring: 144 43% 47%;
+    --radius: 4px;
+    --font-heading: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-body: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-display: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .dark {
+    --background: 144 35% 10%;
+    --foreground: 144 43% 47%;
+    --card: 144 33% 12%;
+    --card-foreground: 144 43% 47%;
+    --popover: 144 33% 12%;
+    --popover-foreground: 144 43% 47%;
+    --primary: 144 43% 47%;
+    --primary-foreground: 144 35% 10%;
+    --secondary: 144 30% 16%;
+    --secondary-foreground: 144 43% 47%;
+    --muted: 144 30% 16%;
+    --muted-foreground: 144 43% 47%;
+    --accent: 144 43% 47%;
+    --accent-foreground: 144 35% 10%;
+    --accent-tint: 144 30% 16%;
+    --section: 144 33% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 144 30% 25%;
+    --input: 144 30% 25%;
+    --ring: 144 43% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  ::selection {
+    background: hsl(var(--accent));
+    color: white;
+  }
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1.1) translate(0, 0); }
+  50% { transform: scale(1.16) translate(2%, -1.5%); }
+  100% { transform: scale(1.1) translate(0, 0); }
+}
+
+.kenburns {
+  animation: kenburns 18s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
